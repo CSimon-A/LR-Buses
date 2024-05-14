@@ -1,0 +1,145 @@
+---
+title: "Extended Report on Analysis of Commuter Mobility and Public Transport Utilization in Agglomerate Communes of La Rochelle"
+author: "Simon ALLAM"
+date: "`r Sys.Date()`"
+output: 
+  html_document
+---
+<br>
+<em><div style="text-align: center;">I extend my sincere gratitude to Professor Rose CAMPBELL and Professor Tatiana GRAINDORGE from EIGSI La Rochelle for their invaluable guidance and mentorship, which have significantly enriched the quality of this report.</div></em>
+```{r library, include=FALSE}
+
+library(sf)
+library(ggplot2)
+library(dplyr)
+library(patchwork)
+library(tidyr)
+library(ggrepel)
+library(tidyverse)
+library(chorddiag)
+library(RColorBrewer)
+library(igraph)
+library(networkD3)
+library(rmarkdown)
+library(heatmaply)
+library(gridExtra)
+require(graphics)
+library(htmlwidgets)
+
+```
+
+```{r setup, include=FALSE}
+
+load("../4-Data_Image/Bus_Project_short.RData")
+
+```
+<br><br>
+<span style="font-size: 18px;"><strong>Introduction:</strong></span>
+
+<div style="text-align: justify;">This comprehensive study aims to unravel the intricate dynamics of commuter mobility and public transport utilization within the Agglomerate Communes of La Rochelle. Leveraging diverse open-source datasets, including IRIS-France, La Rochelle Open Data, INSEE, and the Yelo La Rochelle website, the analysis is centered on eight specific communes within the larger metropolitan area. The primary objective is to assess the flow of working citizens, scrutinize current public transport needs, and identify potential areas for improvement.</div>
+<br><br>
+<span style="font-size: 18px;"><strong>Data Sources:</strong></span>
+<br>
+
+<img src="https://upload.wikimedia.org/wikipedia/fr/a/af/Logo_IRIS.gif" alt="IRIS Logo" height="124px" style="margin-left: 100px" style="margin-right: 40px;">
+<img src="https://opendata.agglo-larochelle.fr/sites/default/files/logo_odlr_1.png" alt="ODLR Logo" height="124px" style="margin-left: 40px" style="margin-right: 40px;">
+<img src="https://upload.wikimedia.org/wikipedia/fr/5/5b/Logo_Insee_%281993-2013%29.svg" alt="INSEE Logo" height="124px" style="margin-left: 40px" style="margin-right: 40px;">
+<img src="https://upload.wikimedia.org/wikipedia/fr/9/9d/Logo_Y%C3%A9lo_la_Rochelle_f%C3%A9vrier_2010.png" alt="Yélo Logo" height="124px" style="margin-left: 40px" style="margin-right: 100px;">
+
+<br>
+<div style="text-align: justify;"><strong>[IRIS - France (geojson file):](https://public.opendatasoft.com/explore/dataset/georef-france-iris/information/?disjunctive.reg_name&disjunctive.dep_name&disjunctive.arrdep_name&disjunctive.ze2020_name&disjunctive.bv2022_name&disjunctive.epci_name&disjunctive.ept_name&disjunctive.com_name&disjunctive.com_arm_name&disjunctive.iris_name&sort=year&refine.year=2023&dataChart=eyJxdWVyaWVzIjpbeyJjb25maWciOnsiZGF0YXNldCI6Imdlb3JlZi1mcmFuY2UtaXJpcyIsIm9wdGlvbnMiOnsiZGlzanVuY3RpdmUucmVnX25hbWUiOnRydWUsImRpc2p1bmN0aXZlLmRlcF9uYW1lIjp0cnVlLCJkaXNqdW5jdGl2ZS5hcnJkZXBfbmFtZSI6dHJ1ZSwiZGlzanVuY3RpdmUuemUyMDIwX25hbWUiOnRydWUsImRpc2p1bmN0aXZlLmJ2MjAyMl9uYW1lIjp0cnVlLCJkaXNqdW5jdGl2ZS5lcGNpX25hbWUiOnRydWUsImRpc2p1bmN0aXZlLmVwdF9uYW1lIjp0cnVlLCJkaXNqdW5jdGl2ZS5jb21fbmFtZSI6dHJ1ZSwiZGlzanVuY3RpdmUuY29tX2FybV9uYW1lIjp0cnVlLCJkaXNqdW5jdGl2ZS5pcmlzX25hbWUiOnRydWUsInNvcnQiOiJ5ZWFyIiwicSI6ImxhIHJvY2hlbGxlIiwicmVmaW5lLnllYXIiOiIyMDIzIiwicmVmaW5lLmVwY2lfbmFtZSI6IkNBIGRlIExhIFJvY2hlbGxlIn19LCJjaGFydHMiOlt7ImFsaWduTW9udGgiOnRydWUsInR5cGUiOiJsaW5lIiwiZnVuYyI6IkNPVU5UIiwic2NpZW50aWZpY0Rpc3BsYXkiOnRydWUsImNvbG9yIjoiI0ZGNTE1QSJ9XSwieEF4aXMiOiJ5ZWFyIiwibWF4cG9pbnRzIjoiIiwidGltZXNjYWxlIjoieWVhciIsInNvcnQiOiIifV0sImRpc3BsYXlMZWdlbmQiOnRydWUsImFsaWduTW9udGgiOnRydWV9&q=CA+La+rochelle&location=11,46.13346,-1.07323&basemap=jawg.light)</strong></span> Geographical information forms the bedrock for spatial analysis, enabling the mapping and exploration of commune distributions.</div>
+
+<div style="text-align: justify;"><strong>[La Rochelle Open Data — Transport Yelo - GTFS Stop des Bus:](https://opendata.agglo-larochelle.fr/visualisation/information/?id=transport_yelo___gtfs_stop_des_bus&dataChart=eyJxdWVyaWVzIjpbeyJjb25maWciOnsiZGF0YXNldCI6InRyYW5zcG9ydF95ZWxvX19fZ3Rmc19zdG9wX2Rlc19idXMiLCJvcHRpb25zIjp7ImlkIjoidHJhbnNwb3J0X3llbG9fX19ndGZzX3N0b3BfZGVzX2J1cyJ9fSwiY2hhcnRzIjpbeyJhbGlnbk1vbnRoIjp0cnVlLCJ0eXBlIjoiY29sdW1uIiwiZnVuYyI6IkFWRyIsInlBeGlzIjoic3RvcF9pZCIsInNjaWVudGlmaWNEaXNwbGF5Ijp0cnVlLCJjb2xvciI6IiM2NmMyYTUifV0sInhBeGlzIjoic3RvcF9pZCIsIm1heHBvaW50cyI6NTAsInNvcnQiOiIifV0sInRpbWVzY2FsZSI6IiIsImRpc3BsYXlMZWdlbmQiOnRydWUsImFsaWduTW9udGgiOnRydWV9)</strong></span> This dataset provides invaluable insights into public transport infrastructure, focusing on bus stops and routes.</div>
+
+<div style="text-align: justify;"><strong>[INSEE — Mobilités professionnelles des individus:](https://www.insee.fr/fr/statistiques/7637844?sommaire=7637890#consulter)</strong></span> This dataset from INSEE sheds light on commuting patterns in 2020, offering crucial information about the movement of individuals between residence and workplace.</div>
+
+<div style="text-align: justify;"><strong>[INSEE — Dossier complet Intercommunalité-Métropole de CA de La Rochelle:](https://www.insee.fr/fr/statistiques/2011101?geo=EPCI-241700434#consulter-sommaire)</strong></span> A comprehensive source providing detailed information on the La Rochelle metropolitan area, including demographic data and the broader regional context.</div>
+
+<div style="text-align: justify;"><strong>[Yelo La Rochelle website:](https://yelo.agglo-larochelle.fr/lignes-et-plans/)</strong></span> While lacking a structured dataset, this source contributes essential information on bus lines and other transit-related details. However, reliance on manual data entry introduces potential limitations.</div>
+<br>
+<span style="font-size: 18px;"><strong>Study Area:</strong></span>
+<div style="text-align: justify;">The analysis focuses on eight specific communes within the Agglomerate Communes of La Rochelle: <em>"Bourgneuf," "Montroy," "Clavette," "La Jarrie," "Saint-Médard d’Aunis," "Saint-Christophe," "Croix-Chapeau," </em>and<em> "Salles-sur-Mer.”</em></div>
+<br><br>
+<span style="font-size: 18px;"><strong>Graphs:</strong></span>
+
+<span style="font-size: 16px;"><strong>Public Transport Usage:</strong></span>
+
+<div style="text-align: justify;">Utilizing a colormap, this graph visualizes the percentage of people using public transport in their respective communes compared to the overall population of each commune.</div>
+<br>
+```{r plot1, echo=FALSE, out.width = "100%"}
+map_plot_LR_fill
+```
+<br><br>
+<span style="font-size: 16px;"><strong>Personal Vehicle Usage:</strong></span>
+
+<div style="text-align: justify;">Similar to the first graph, this visualization replaces public transport usage with personal vehicle usage, providing a comparative view.</div>
+<br>
+```{r plot2, echo=FALSE, out.width = "100%"}
+map_plot_LR_fill_car
+```
+<br><br>
+<span style="font-size: 16px;"><strong>Bus Stops and Routes in La Rochelle:</strong></span>
+
+<div style="text-align: justify;">This map presents all bus stops and TAD stops in La Rochelle, including the communes of interest. However, limitations in the dataset, particularly with hand-inputted bus routes, highlight the need for more accurate route information.</div>
+<br>
+```{r plot3, echo=FALSE, out.width = "100%"}
+map_plot
+```
+<br><br>
+<span style="font-size: 16px;"><strong>Zoomed Map of 8 Communes:</strong></span>
+
+<div style="text-align: justify;">A more focused map on the eight communes, now featuring commune names and the number of bus stops within each, offering a localized perspective.</div>
+```{r plot4, echo=FALSE, out.width = "100%"}
+map_plot2
+```
+<span style="font-size: 16px;"><strong>Population in 8 Communes:</strong></span>
+
+<div style="text-align: justify;">This graph introduces a representation of the population within the eight communes, aiding in providing demographic context to the study area and contributing to a comprehensive understanding of the region's dynamics.</div>
+```{r plot5, echo=FALSE, out.width = "100%"}
+map_plot_LR_fill_Pop
+```
+<span style="font-size: 16px;"><strong>Public Transport Use in 8 Communes:</strong></span>
+
+<div style="text-align: justify;">This map employs color-coding to represent public transport usage percentages, providing a spatial understanding of commuting preferences.</div>
+```{r plot6, echo=FALSE, out.width = "100%"}
+map_plot_percent_fill_bus_z
+```
+<span style="font-size: 16px;"><strong>Personal Vehicle Use in 8 Communes:</strong></span>
+
+<div style="text-align: justify;">Parallel to the fifth graph, this visualization focuses on personal vehicle usage within the eight communes.</div>
+```{r plot7, echo=FALSE, out.width = "100%"}
+map_plot_percent_fill_car_z
+```
+<span style="font-size: 16px;"><strong>Interactive Chord Graph:</strong></span>
+
+<div style="text-align: justify;">A dynamic visualization showcasing the flows of people commuting to and from the eight communes, La Rochelle, CDA (excluding the eight communes), and Hors CDA (areas outside the 8 communes, La Rochelle, and CDA). This provides a global perspective on commuting patterns, with values for non-relevant flows set to 0 to emphasize pertinent information.</div>
+```{r plot8, echo=FALSE, out.width = "100%"}
+htmltools::tags$iframe(src = "../5-Widgets/chord_commune.html", width = 900, height = 800)
+```
+<br><br>
+<span style="font-size: 18px;"><strong>Conclusion:</strong></span>
+
+<div style="text-align: justify;">The visualizations collectively offer a nuanced understanding of commuting patterns, public transport usage, and existing infrastructure challenges. The identified need for more accurate bus route data underscores the importance of refining data sources for a more precise analysis. The interactive chord graph, now expanded to include global commuting patterns, serves as a valuable tool for stakeholders to dynamically explore and comprehend the intricate interplay of commuter flows within and beyond the study area. This study lays the groundwork for informed decision-making in enhancing public transport services and addressing the specific mobility needs of the Agglomerate Communes of La Rochelle, while also providing insights into broader regional and global commuting trends.</div>
+<br><br>
+
+
+
+
+```{r plot, echo=FALSE, out.width = "100%"}
+
+#map_plot_LR_fill
+#map_plot_LR_fill_car
+#map_plot
+#map_plot2
+#map_plot_LR_fill_Pop
+#map_plot_percent_fill_bus_z
+#map_plot_percent_fill_car_z
+
+#htmltools::tags$iframe(src = "chord_commune.html", width = 1000, height = 800)
+
+#map_plot_LR_fill_Pop
+#map_plot_LR_fill_NV
+#heat_commune_den
+
+
+```

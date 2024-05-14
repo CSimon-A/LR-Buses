@@ -1,0 +1,5 @@
+saveWidget(chord_commune, file = "5-Widgets/chord_commune.html")
+#saveWidget(map_plot_500m, file = "5-Widgets/map_plotm.html")
+#saveWidget(map_plot_500m_a, file = "5-Widgets/map_plota.html")
+saveWidget(heat_commune_den, file = "5-Widgets/heat_commune_den.html")
+saveWidget(heat_commune, file = "5-Widgets/heat_commune.html")

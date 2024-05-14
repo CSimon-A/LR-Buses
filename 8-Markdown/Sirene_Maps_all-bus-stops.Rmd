@@ -1,0 +1,88 @@
+---
+title: Colorcoded bus stops in relation to the business density
+author: "Simon ALLAM"
+date: "`r Sys.Date()`"
+output:
+  pdf_document: default
+  html_document: default
+---
+<br>
+
+```{r library, include=FALSE}
+
+library(sf)
+library(ggplot2)
+library(dplyr)
+library(patchwork)
+library(tidyr)
+library(ggrepel)
+library(tidyverse)
+library(chorddiag)
+library(RColorBrewer)
+library(igraph)
+library(networkD3)
+library(rmarkdown)
+library(heatmaply)
+library(htmlwidgets)
+library(foreign)
+library(sp)
+library(gridExtra)
+library(MASS)
+library(reshape2)
+library(scales)
+library(htmlwidgets)
+
+```
+
+```{r setup, include=FALSE}
+
+load("../4-Data_Image/Bus_Project_short.RData")
+
+```
+
+<div style="text-align: justify;">There are 4 different maps based on the radius size chosen for the business count (100m, 200m, 500m and 1000m radius). The bus stops included in the map are all stops (Transport a Demande) in the region. </div>
+<br>
+```{r plot0, echo=FALSE, out.width = "100%"}
+map_plot_grad
+
+```
+
+```{r plot1, echo=FALSE, out.width = "100%"}
+map_plot_100m_a
+map_plot_100m
+```
+
+```{r plot2, echo=FALSE, out.width = "100%"}
+map_plot_200m_a
+map_plot_200m
+```
+
+```{r plot3, echo=FALSE, out.width = "100%"}
+map_plot_500m_a
+map_plot_500m
+```
+
+```{r plot4, echo=FALSE, out.width = "100%"}
+map_plot_1000m_a
+map_plot_1000m
+```
+
+```{r plot5, echo=FALSE, out.width = "100%"}
+# Selecting only the columns you want to keep
+bus_lines_auto_5_a_s <- subset(bus_lines_auto_5_a, select = c("stop_name", "stop_desc", "business_count_500m"))
+bus_lines_auto_5_s <- subset(bus_lines_auto_5, select = c("stop_name", "stop_desc", "business_count_500m"))
+
+bus_lines_auto_5_a_s <- bus_lines_auto_5_a_s[order(-bus_lines_auto_5_a_s$business_count_500m), ]
+bus_lines_auto_5_s <- bus_lines_auto_5_s[order(-bus_lines_auto_5_s$business_count_500m), ]
+
+# Getting the top 15 values
+head(bus_lines_auto_5_a_s, 15)
+head(bus_lines_auto_5_s, 15)
+
+```
+
+
+
+<br>
+
+
