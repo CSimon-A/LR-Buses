@@ -1,0 +1,81 @@
+﻿route_id,agency_id,route_short_name,route_long_name,route_desc,route_type,route_color,route_text_color,route_url,route_date_donnee
+LD1,YELO,D1,La Pallice <> Aytré (Dimanche),"",3,005FAC,FFFFFF,0,2024-01-22 04:01:44.0
+LD2,YELO,D2,La Pallice <> Mireuil et Périgny (Dimanche),"",3,E40613,FFFFFF,0,2024-01-22 04:01:44.0
+LD3,YELO,D3,Lagord <> Les Minimes (Dimanche),"",3,C95218,FFFFFF,0,2024-01-22 04:01:44.0
+LD4,YELO,D4,Beaulieu <> Les Minimes (Dimanche),"",3,047935,FFFFFF,0,2024-01-22 04:01:44.0
+LD5,YELO,D5,Laleu <> Gare La Rochelle (Dimanche),"",3,84C8AC,000000,0,2024-01-22 04:01:44.0
+LN1,YELO,N1,La Pallice <> Place de Verdun <> Aytré (Nuit),"",3,005FAC,FFFFFF,0,2024-01-22 04:01:44.0
+LN2,YELO,N2,Mireuil <> Place de Verdun <> Villeneuve (Nuit),"",3,E40613,FFFFFF,0,2024-01-22 04:01:44.0
+LN3,YELO,N3,Lagord <> Place de Verdun <> Les Minimes (Nuit),"",3,C95218,FFFFFF,0,2024-01-22 04:01:44.0
+L1,YELO,1,ILLICO La Pallice / Laleu <> Aytré,"",3,005FAC,FFFFFF,0,2024-01-22 04:01:44.0
+L10,YELO,10,L'Houmeau <> Place de Verdun,10 - L'Houmeau -  Place de Verdun,3,D1BCDC,000000,,2024-01-22 04:01:44.0
+L11,YELO,11,Nieul-sur-Mer <> Place de Verdun,"",3,F1879E,000000,0,2024-01-22 04:01:44.0
+L12,YELO,12,Esnandes - Marsilly <> Place de Verdun,12 - Esnandes - Marsilly - Place de Verdun,3,CCB16C,000000,,2024-01-22 04:01:44.0
+L13,YELO,13,Saint-Xandre <> Place de Verdun,"",3,C5DC9C,000000,0,2024-01-22 04:01:44.0
+L14,YELO,14,Dompierre-sur-mer <> Place de Verdun,14 - Dompierre-sur-mer - Place de Verdun,3,FCCF97,000000,,2024-01-22 04:01:44.0
+L15,YELO,15,Vérines - Ste-Soulle - Dompierre-sur-Mer <> Place de Verdun,15 - Vérines - Place de Verdun,3,F5B5D3,000000,,2024-01-22 04:01:44.0
+L16,YELO,16,ZI Périgny <> Dames Blanches,"",3,84C8AC,000000,0,2024-01-22 04:01:44.0
+L17,YELO,17,St-Christophe - Bourgneuf <> Gare SNCF,17 - St-Christophe - Gare SNCF,3,FFEB80,000000,,2024-01-22 04:01:44.0
+L18,YELO,18,La Jarrie - Croix-Chapeau - Clavette <> Gare SNCF,18 - La Jarrie / Croix-Chapeau - Gare SNCF,3,A1DAF8,000000,,2024-01-22 04:01:44.0
+L19,YELO,19,Salles-sur-Mer - La Jarne <> Dames Blanches,19 - Salles-sur-Mer / La Jarne - Dames Blanches,3,A7BCC4,000000,,2024-01-22 04:01:44.0
+L2,YELO,2,ILLICO Mireuil <> Villeneuve,"",3,E40613,FFFFFF,0,2024-01-22 04:01:44.0
+L20,YELO,20,Châtelaillon-Plage - Angoulins-sur-mer <> Gare SNCF,20 - Châtelaillon-Plage / Angoulins-sur-mer - Gare SNCF,3,F18C7C,000000,,2024-01-22 04:01:44.0
+L201,YELO,201,Collège Guiton > Lagord,201 - Collège Guiton > Lagord,3,F18819,000000,,2024-01-22 04:01:44.0
+L202,YELO,202,Collège Guiton > L'Houmeau,202 - Collège Guiton > L'Houmeau,3,F18819,000000,,2024-01-22 04:01:44.0
+L203,YELO,203,Collège Guiton > Nieul sur Mer - Marsilly - Esnandes,203 - Collège Guiton > Nieul sur Mer - Marsilly - Esnandes,3,F18819,000000,,2024-01-22 04:01:44.0
+L21,YELO,21,Thairé <> Châtelaillon-Plage <> Yves,21 - Thairé - Châtelaillon-Plage - Yves,3,BE8D77,000000,,2024-01-22 04:01:44.0
+L211,YELO,211,Collège Beauregard <> Place de Verdun,"",3,F28919,000000,0,2024-01-22 04:01:44.0
+L212,YELO,212,Collège Beauregard > Puilboreau,212 - Collège Beauregard > Puilboreau,3,F18819,000000,,2024-01-22 04:01:44.0
+L213,YELO,213,Collège Beauregard > Saint Xandre,213 - Collège Beauregard > Saint Xandre,3,F18819,000000,,2024-01-22 04:01:44.0
+L214,YELO,214,Collège Beauregard > Périgny Rompsay,214 - Collège Beauregard > Périgny Rompsay,3,F18819,000000,,2024-01-22 04:01:44.0
+L221,YELO,221,Collège Fabre d'Eglantine <> Saint-Rogatien,"",3,F28919,000000,0,2024-01-22 04:01:44.0
+L222,YELO,222,Collège Fabre d'Eglantine > Périgny,222 - Collège Fabre d'Eglantine > Périgny,3,F18819,000000,,2024-01-22 04:01:44.0
+L223,YELO,223,Collège Fabre d'Eglantine > Périgny Rompsay,223 - Collège Fabre d'Eglantine > Périgny Rompsay,3,F18819,000000,,2024-01-22 04:01:44.0
+L231,YELO,231,Collège Camus > Villeneuve les Salines,231 - Collège Camus > Villeneuve les Salines,3,F18819,000000,,2024-01-22 04:01:44.0
+L232,YELO,232,Collège Camus > Les Minimes,232 - Collège Camus > Les Minimes,3,F18819,000000,,2024-01-22 04:01:44.0
+L241,YELO,241,Collège Chagall > Dompierre - Sainte Soulle,241 - Collège Chagall > Dompierre - Sainte Soulle,3,F18819,000000,,2024-01-22 04:01:44.0
+L242,YELO,242,Collège Chagall > Bourgneuf - Vérines,242 - Collège Chagall > Bourgneuf - Vérines,3,F18819,000000,,2024-01-22 04:01:44.0
+L251,YELO,251,Collège Dolto > St Médard - St Christophe,251 - Collège Dolto > St Médard - St Christophe,3,F18819,000000,,2024-01-22 04:01:44.0
+L252,YELO,252,Collège Dolto > Montroy - Clavette,252 - Collège Dolto > Montroy - Clavette,3,F18819,000000,,2024-01-22 04:01:44.0
+L253,YELO,253,Collège Dolto > Croix-Chapeau,253 - Collège Dolto > Croix-Chapeau,3,F18819,000000,,2024-01-22 04:01:44.0
+L254,YELO,254,Collège Dolto > Bourgneuf,254 - Collège Dolto > Bourgneuf,3,F18819,000000,,2024-01-22 04:01:44.0
+L261,YELO,261,Collège Atlantique > Aytré,261 - Collège Atlantique > Aytré,3,F18819,000000,,2024-01-22 04:01:44.0
+L262,YELO,262,Collège Atlantique > La Jarne,262 - Collège Atlantique > La Jarne,3,F18819,000000,,2024-01-22 04:01:44.0
+L263,YELO,263,Collège Atlantique > Angoulins,263 - Collège Atlantique > Angoulins,3,F18819,000000,,2024-01-22 04:01:44.0
+L271,YELO,271,Collège Malraux > Salles sur Mer,271 - Collège Malraux > Salles sur Mer,3,F18819,000000,,2024-01-22 04:01:44.0
+L272,YELO,272,Collège Malraux > Thairé,272 - Collège Malraux > Thairé,3,F18819,000000,,2024-01-22 04:01:44.0
+L273,YELO,273,Collège Malraux > Yves,273 - Collège Malraux > Yves,3,F18819,000000,,2024-01-22 04:01:44.0
+L274,YELO,274,Collège Malraux > La Jarne,274 - Collège Malraux > La Jarne,3,F18819,000000,,2024-01-22 04:01:44.0
+L275,YELO,275,Collège Malraux > Yves,275 - Collège Malraux > Yves,3,F18819,000000,,2024-01-22 04:01:44.0
+L276,YELO,276,Collège Malraux > Saint-Vivien,276 - Collège Malraux > Saint-Vivien,3,F18819,000000,,2024-01-22 04:01:44.0
+L3,YELO,3,ILLICO Lagord <> Bongraine,"",3,C95218,FFFFFF,0,2024-01-22 04:01:44.0
+L300,YELO,300,Lycée St-Exupéry <> Place de Verdun,"",3,F28919,000000,0,2024-01-22 04:01:44.0
+L302,YELO,302,Lycée St-Exupéry <> Laleu,"",3,F28919,000000,0,2024-01-22 04:01:44.0
+L309,YELO,309,Navette Lycée St Exupéry,309 - Navette Lycée St Exupéry,3,F18819,000000,,2024-01-22 04:01:44.0
+L310,YELO,310,LEP Rompsay-Doriole <> Pl. de Verdun via D. Blanches,"",3,F28919,000000,0,2024-01-22 04:01:44.0
+L311,YELO,311,LEP Rompsay-Doriole <> Pl. de Verdun via Gare SNCF,"",3,F28919,000000,0,2024-01-22 04:01:44.0
+L319,YELO,319,Navette LEP Rompsay,319 - Navette LEP Rompsay,3,F18819,000000,,2024-01-22 04:01:44.0
+L320,YELO,320,Navette Lycée Valin,320 - Navette Lycée Valin,3,F18819,000000,,2024-01-22 04:01:44.0
+L321,YELO,321,Lycée Valin <> Saint-Rogatien,"",3,F28919,000000,0,2024-01-22 04:01:44.0
+L322,YELO,322,Lycée Valin > St Médard - St Christophe,322 - Lycée Valin > St Médard - St Christophe,3,F18819,000000,,2024-01-22 04:01:44.0
+L323,YELO,323,Lycée Valin > Montroy - Bourgneuf - Clavette,323 - Lycée Valin > Montroy - Bourgneuf - Clavette,3,F1881A,000000,,2024-01-22 04:01:44.0
+L324,YELO,324,Lycée Valin > La Jarrie - Clavette,324 - Lycée Valin > La Jarrie - Clavette,3,F18819,000000,,2024-01-22 04:01:44.0
+L325,YELO,325,Lycée Valin > Croix-Chapeau,325 - Lycée Valin > Croix-Chapeau,3,F18819,000000,,2024-01-22 04:01:44.0
+L326,YELO,326,Lycée Valin > Yves - Thairé - St Vivien - Chatelaillon - Salles - Angoulins,326 - Lycée Valin > Yves - Thairé - St Vivien - Chatelaillon - Salles - Angoulins,3,F18819,000000,,2024-01-22 04:01:44.0
+L327,YELO,327,Lycée Valin > Rompsay - Chagnolet,327 - Lycée Valin > Rompsay - Chagnolet,3,F18819,000000,,2024-01-22 04:01:44.0
+L331,YELO,331,Lycée Vieljeux > Lagord - Nieul - Marsilly - Esnandes,331 - Lycée Vieljeux > Lagord - Nieul - Marsilly - Esnandes,3,F18819,000000,,2024-01-22 04:01:44.0
+L339,YELO,339,Navette Lycée Vieljeux,339 - Navette Lycée Vieljeux,3,F18819,000000,,2024-01-22 04:01:44.0
+L341,YELO,341,Place de Verdun > Puilboreau - St Xandre - Ste Soulle,341 - Place de Verdun > Puilboreau - St Xandre - Ste Soulle,3,F18819,000000,,2024-01-22 04:01:44.0
+L342,YELO,342,Place de Verdun > Puilboreau - Dompierre sur Mer - Ste Soulle - Vérines,342 - Place de Verdun > Puilboreau - Dompierre sur Mer - Ste Soulle - Vérines,3,F18819,000000,,2024-01-22 04:01:44.0
+L343,YELO,343,Place de Verdun > St Vivien - Thairé - Yves,343 - Place de Verdun> St Vivien - Thairé - Yves,3,F18819,000000,,2024-01-22 04:01:44.0
+L344,YELO,344,Place de Verdun > Bourgneuf - Montroy - St Médard - St Christophe,344 - Place de Verdun > Bourgneuf - Montroy - St Médard - St Christophe,3,F18819,000000,,2024-01-22 04:01:44.0
+L345,YELO,345,Place de Verdun > Clavette - Croix-Chapeau - La Jarrie,345 - Place de Verdun > Clavette - Croix-Chapeau - La Jarrie,3,F18819,000000,,2024-01-22 04:01:44.0
+L346,YELO,346,Place de Verdun > Salles-sur-Mer - Croix-Chapeau,346 - Place de Verdun > Salles-sur-Mer - Croix-Chapeau,3,F18819,000000,,2024-01-22 04:01:44.0
+L349,YELO,349,Navette Place de Verdun,349 - Place de Verdun,3,F18819,000000,,2024-01-22 04:01:44.0
+L392,YELO,392,Navette Lycées,"",3,F28919,000000,0,2024-01-22 04:01:44.0
+L393,YELO,393,Navette Université,"",3,F28919,000000,0,2024-01-22 04:01:44.0
+L4,YELO,4,ILLICO Beaulieu <> Les Minimes,"",3,047935,FFFFFF,0,2024-01-22 04:01:44.0
+L401,YELO,401,Ecoles de Montroy et Clavette,401 - Ecoles de Montroy et Clavette,3,F18819,000000,,2024-01-22 04:01:44.0
+L6,YELO,6,Lycée Vieljeux <> Place de Verdun,"",3,742283,FFFFFF,0,2024-01-22 04:01:44.0
+L7,YELO,7,Chef Baie / Port-Neuf <> Périgny Ctre / Dompierre-Chagnolet,"",3,E7007E,FFFFFF,0,2024-01-22 04:01:44.0
+L8,YELO,8,Saint-Rogatien <> Dames Blanches,"",3,00A0E4,000000,0,2024-01-22 04:01:44.0
