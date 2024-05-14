@@ -24,7 +24,7 @@ A comprehensive source providing detailed information on the La Rochelle metropo
 ### [Sirene database of companies and their establishments:](https://www.data.gouv.fr/fr/datasets/base-sirene-des-entreprises-et-de-leurs-etablissements-siren-siret/#/information)
 A comprehensive source providing detailed information on all french companies, including location, worker count and industry type.
 
-### [Sirene Nomenclatures:](https://www.insee.fr/fr/information/2406147)
+### [Sirene nomenclatures:](https://www.insee.fr/fr/information/2406147)
 Datasets used to understand the sirene nomenclatures.
 
 ---
